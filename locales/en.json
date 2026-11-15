@@ -1,0 +1,59 @@
+{
+  "page": {
+    "play": "Play",
+    "create": "Create character",
+    "empty": "Empty slot",
+    "born": "Born",
+    "lastPlayed": "Last played",
+    "location": "Last location",
+    "never": "Never",
+    "downed": "Downed",
+    "dead": "Dead",
+    "skip": "Press Enter to skip",
+    "slot": "Slot {index} of {count}",
+    "hint": "← → to choose · Enter to play",
+    "createTitle": "New character",
+    "back": "Back",
+    "submit": "Create",
+    "model": "Body",
+    "modelMale": "Male",
+    "modelFemale": "Female",
+    "delete": "Delete",
+    "deleteTitle": "Delete {name}?",
+    "deleteHint": "Type {name} to confirm. This cannot be undone.",
+    "cancel": "Cancel",
+    "errorRequired": "Required",
+    "errorLength": "{min} to {max} characters",
+    "errorSymbols": "Letters only, no digits or symbols",
+    "errorSpaces": "No extra spaces",
+    "errorDate": "Use a real date",
+    "errorAge": "Age {min} to {max}",
+    "errorOption": "Pick one",
+    "resultInvalid": "Some details were not accepted.",
+    "resultDenied": "This is not allowed.",
+    "resultWait": "Wait a moment and try again.",
+    "resultFailed": "Something went wrong. Try again.",
+    "spawnTitle": "Where to?",
+    "spawnHint": "↑ ↓ to choose · Enter to go",
+    "spawnGo": "Spawn here",
+    "lastLocation": "Last location",
+    "firstLocation": "Arrival point"
+  },
+  "fields": {
+    "firstName": "First name",
+    "lastName": "Last name",
+    "birthDate": "Birth date",
+    "sex": "Sex"
+  },
+  "options": {
+    "sex": {
+      "male": "Male",
+      "female": "Female"
+    }
+  },
+  "spawns": {
+    "legion": "Legion Square",
+    "sandy": "Sandy Shores",
+    "paleto": "Paleto Bay"
+  }
+}

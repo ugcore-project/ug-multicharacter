@@ -1,0 +1,236 @@
+/* Self-hosted: the page MUST NOT depend on an external request to render text. */
+@import "@fontsource-variable/inter";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Theme tokens as HSL triplets: FiveM's CEF does not reliably support the
+  newer color functions of Tailwind v4. `.dark` swaps the whole set, and
+  src/store/configStore.ts applies theme overrides at runtime.
+*/
+@layer base {
+  :root {
+    --ug-background: 0 0% 100%;
+    --ug-foreground: 222.2 84% 4.9%;
+
+    --ug-card: 0 0% 100%;
+    --ug-card-foreground: 222.2 84% 4.9%;
+
+    --ug-popover: 0 0% 100%;
+    --ug-popover-foreground: 222.2 84% 4.9%;
+
+    --ug-primary: 262.1 83.3% 57.8%;
+    --ug-primary-foreground: 210 40% 98%;
+
+    --ug-secondary: 210 40% 96.1%;
+    --ug-secondary-foreground: 222.2 47.4% 11.2%;
+
+    --ug-muted: 210 40% 96.1%;
+    --ug-muted-foreground: 215.4 16.3% 46.9%;
+
+    --ug-accent: 210 40% 96.1%;
+    --ug-accent-foreground: 222.2 47.4% 11.2%;
+
+    --ug-destructive: 0 84.2% 60.2%;
+    --ug-destructive-foreground: 210 40% 98%;
+
+    --ug-success: 142 71% 45%;
+    --ug-success-foreground: 210 40% 98%;
+
+    --ug-warning: 38 92% 50%;
+    --ug-warning-foreground: 222.2 47.4% 11.2%;
+
+    --ug-border: 214.3 31.8% 91.4%;
+    --ug-input: 214.3 31.8% 91.4%;
+    --ug-ring: 262.1 83.3% 57.8%;
+
+    --ug-radius: 0.75rem;
+
+    --ug-font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+
+  .dark {
+    --ug-background: 222.2 84% 4.9%;
+    --ug-foreground: 210 40% 98%;
+
+    --ug-card: 222.2 84% 4.9%;
+    --ug-card-foreground: 210 40% 98%;
+
+    --ug-popover: 222.2 84% 4.9%;
+    --ug-popover-foreground: 210 40% 98%;
+
+    --ug-primary: 258.3 89.5% 66.3%;
+    --ug-primary-foreground: 0 0% 100%;
+
+    --ug-secondary: 217.2 32.6% 17.5%;
+    --ug-secondary-foreground: 210 40% 98%;
+
+    --ug-muted: 217.2 32.6% 17.5%;
+    --ug-muted-foreground: 215 20.2% 65.1%;
+
+    --ug-accent: 217.2 32.6% 17.5%;
+    --ug-accent-foreground: 210 40% 98%;
+
+    --ug-destructive: 0 62.8% 30.6%;
+    --ug-destructive-foreground: 210 40% 98%;
+
+    --ug-success: 142 71% 45%;
+    --ug-success-foreground: 144 61% 10%;
+
+    --ug-warning: 38 92% 50%;
+    --ug-warning-foreground: 20 91% 10%;
+
+    --ug-border: 217.2 32.6% 17.5%;
+    --ug-input: 217.2 32.6% 17.5%;
+    --ug-ring: 263.4 70% 50.4%;
+  }
+}
+
+@layer base {
+  /* Global defaults only. Component styling lives in the components. */
+  * {
+    @apply border-border;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}
+
+/* Accent palettes: Tailwind's 300 to 600 shades. Owners recolor one through theme.colors; src/lib/theme.ts derives
+   the other shades. tailwind.config.js points violet-500 and friends here. */
+:root {
+  --ug-tone-violet-300: 252 95% 85%;
+  --ug-tone-violet-400: 255 92% 76%;
+  --ug-tone-violet-500: 258 90% 66%;
+  --ug-tone-violet-600: 262 83% 58%;
+  --ug-tone-indigo-300: 230 94% 82%;
+  --ug-tone-indigo-400: 234 89% 74%;
+  --ug-tone-indigo-500: 239 84% 67%;
+  --ug-tone-indigo-600: 243 75% 59%;
+  --ug-tone-blue-300: 212 96% 78%;
+  --ug-tone-blue-400: 213 94% 68%;
+  --ug-tone-blue-500: 217 91% 60%;
+  --ug-tone-blue-600: 221 83% 53%;
+  --ug-tone-sky-300: 199 95% 74%;
+  --ug-tone-sky-400: 198 93% 60%;
+  --ug-tone-sky-500: 199 89% 48%;
+  --ug-tone-sky-600: 200 98% 39%;
+  --ug-tone-emerald-300: 156 72% 67%;
+  --ug-tone-emerald-400: 158 64% 52%;
+  --ug-tone-emerald-500: 160 84% 39%;
+  --ug-tone-emerald-600: 161 94% 30%;
+  --ug-tone-amber-300: 46 97% 65%;
+  --ug-tone-amber-400: 43 96% 56%;
+  --ug-tone-amber-500: 38 92% 50%;
+  --ug-tone-amber-600: 32 95% 44%;
+  --ug-tone-rose-300: 353 96% 82%;
+  --ug-tone-rose-400: 351 95% 71%;
+  --ug-tone-rose-500: 350 89% 60%;
+  --ug-tone-rose-600: 347 77% 50%;
+  --ug-tone-fuchsia-300: 291 93% 83%;
+  --ug-tone-fuchsia-400: 292 91% 73%;
+  --ug-tone-fuchsia-500: 292 84% 61%;
+  --ug-tone-fuchsia-600: 293 69% 49%;
+  --ug-tone-teal-300: 171 77% 64%;
+  --ug-tone-teal-400: 172 66% 50%;
+  --ug-tone-teal-500: 173 80% 40%;
+  --ug-tone-teal-600: 175 84% 32%;
+}
+
+/* layout.animations = false: nothing moves. */
+.ug-still,
+.ug-still * {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Thin scrollbars. NUI is always Chromium, so webkit-only is enough. */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--ug-border));
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--ug-muted-foreground) / 0.5);
+}
+
+/* The keyframes below run with durations or delays set inline by their components. */
+@keyframes ug-notification-shrink {
+  from {
+    transform: scaleX(1);
+  }
+
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes ug-pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ug-progress-fill {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* The circumference comes from Progress.tsx, so the keyframe follows its radius. */
+@keyframes ug-progress-circle-fill {
+  from {
+    stroke-dashoffset: var(--ug-progress-circumference);
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* UI scale from theme.scale: every rem-based size follows the root font size. */
+html {
+  font-size: calc(16px * var(--ug-scale, 1));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+/* The skill check needle: one turn per round, duration set by the component. */
+@keyframes ug-skill-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

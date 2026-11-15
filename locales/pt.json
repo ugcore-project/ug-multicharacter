@@ -1,0 +1,59 @@
+{
+  "page": {
+    "play": "Jogar",
+    "create": "Criar personagem",
+    "empty": "Espaço livre",
+    "born": "Nascido em",
+    "lastPlayed": "Última sessão",
+    "location": "Última localização",
+    "never": "Nunca",
+    "downed": "Inconsciente",
+    "dead": "Morto",
+    "skip": "Prima Enter para saltar",
+    "slot": "Espaço {index} de {count}",
+    "hint": "← → para escolher · Enter para jogar",
+    "createTitle": "Nova personagem",
+    "back": "Voltar",
+    "submit": "Criar",
+    "model": "Corpo",
+    "modelMale": "Masculino",
+    "modelFemale": "Feminino",
+    "delete": "Apagar",
+    "deleteTitle": "Apagar {name}?",
+    "deleteHint": "Escreva {name} para confirmar. Esta ação não pode ser desfeita.",
+    "cancel": "Cancelar",
+    "errorRequired": "Obrigatório",
+    "errorLength": "{min} a {max} caracteres",
+    "errorSymbols": "Apenas letras, sem números nem símbolos",
+    "errorSpaces": "Sem espaços a mais",
+    "errorDate": "Use uma data válida",
+    "errorAge": "Idade de {min} a {max}",
+    "errorOption": "Escolha uma opção",
+    "resultInvalid": "Alguns dados não foram aceites.",
+    "resultDenied": "Isto não é permitido.",
+    "resultWait": "Aguarde um momento e tente novamente.",
+    "resultFailed": "Algo correu mal. Tente novamente.",
+    "spawnTitle": "Para onde?",
+    "spawnHint": "↑ ↓ para escolher · Enter para ir",
+    "spawnGo": "Aparecer aqui",
+    "lastLocation": "Última localização",
+    "firstLocation": "Ponto de chegada"
+  },
+  "fields": {
+    "firstName": "Nome",
+    "lastName": "Apelido",
+    "birthDate": "Data de nascimento",
+    "sex": "Sexo"
+  },
+  "options": {
+    "sex": {
+      "male": "Masculino",
+      "female": "Feminino"
+    }
+  },
+  "spawns": {
+    "legion": "Legion Square",
+    "sandy": "Sandy Shores",
+    "paleto": "Paleto Bay"
+  }
+}
